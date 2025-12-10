@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>溫馨小食堂 - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page-container slide-in">
+    <h2>關於這個網站 & 心得</h2>
+
+    <section class="about-block">
+      <h3>以下是我的心得</h3>
+      <p>
+        這是一個期中作業示範網站，展示 RWD、動畫和 JavaScript 互動功能。
+      </p>
+      <p>
+        我附上這支 YouTube 影片，作為本網站的靈感來源想分享給大家：
+      </p>
+      <p>
+        🔗 YouTube 連結：
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        </a>
+      </p>
+
+<div class="video-wrapper">
+  <iframe
+    id="about-video"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+    </section>
+  </main>
+
+   <div class="light-orb"></div>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const musicToggle = document.getElementById('music-toggle');
+    let isMusicPlaying = false;
+
+    if (music && musicToggle) {
+      musicToggle.addEventListener('click', () => {
+        if (!isMusicPlaying) {
+          music.play();
+          isMusicPlaying = true;
+          musicToggle.textContent = '♫ Pause';
+        } else {
+          music.pause();
+          isMusicPlaying = false;
+          musicToggle.textContent = '♫ Music';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>
