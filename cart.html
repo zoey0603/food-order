@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>溫馨小食堂 - 折扣小遊戲</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main class="page-container slide-in">
+    <h2>折扣小遊戲</h2>
+    <p class="hint">
+      規則：10 秒內盡可能點擊食物圖示，每 1 分 = 折 5 元，上限 100 元，優惠不會累加。<br />
+      遊戲結束後，折扣會自動套用到 Menu 頁的結帳金額中。
+    </p>
+
+    <div class="game-panel">
+      <div class="game-stats">
+        <span>時間：<span id="time-left">10</span> 秒</span>
+        <span>分數：<span id="score">0</span></span>
+        <span>目前折扣：<span id="current-discount">0</span> 元</span>
+      </div>
+
+      <button id="start-game" class="glow-btn">開始遊戲</button>
+
+      <div id="game-area">
+        <div id="target" class="target hidden">🍙</div>
+      </div>
+
+      <p id="game-message" class="game-message"></p>
+
+      <div class="game-back-links">
+        <a href="menu.html" class="back-link">回到 Menu 看折扣效果</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="light-orb"></div>
+
+  <script src="js/cartGame.js"></script>
+</body>
+</html>

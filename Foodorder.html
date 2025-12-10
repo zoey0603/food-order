@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>溫馨小食堂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .frame-wrapper {
+      width: 100%;
+      height: calc(100vh - 70px);
+    }
+    #content-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body class="has-snow">
+  <audio id="bg-music" src="audio/bg-music.mp3" loop></audio>
+
+
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="logo" class="logo-icon" />
+      <span>溫馨小食堂</span>
+    </div>
+
+    <button id="music-toggle" class="glow-btn">♫ Music</button>
+
+    <nav class="nav">
+      <a href="#" data-page="menu.html" class="active-page">Menu</a>
+      <a href="#" data-page="cart.html">Cart</a>
+      <a href="#" data-page="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="frame-wrapper">
+    <iframe id="content-frame" src="menu.html"></iframe>
+  </main>
+
+  <div class="snow-layer"></div>
+  <div class="light-orb"></div>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const musicToggle = document.getElementById('music-toggle');
+    let isMusicPlaying = false;
+
+    if (music && musicToggle) {
+      musicToggle.addEventListener('click', () => {
+        if (!isMusicPlaying) {
+          music.play();
+          isMusicPlaying = true;
+          musicToggle.textContent = '♫ Pause';
+        } else {
+          music.pause();
+          isMusicPlaying = false;
+          musicToggle.textContent = '♫ Music';
+        }
+      });
+    }
+
+    const navLinks = document.querySelectorAll('.nav a[data-page]');
+    const frame = document.getElementById('content-frame');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const page = link.getAttribute('data-page');
+        frame.src = page;
+
+        navLinks.forEach(a => a.classList.remove('active-page'));
+        link.classList.add('active-page');
+      });
+    });
+
+    const snowLayer = document.querySelector('.snow-layer');
+    if (snowLayer) {
+      for (let i = 0; i < 40; i++) {
+        const span = document.createElement('span');
+        span.className = 'snowflake';
+        span.textContent = '❄';
+        span.style.left = Math.random() * 100 + 'vw';
+        span.style.animationDuration = 5 + Math.random() * 7 + 's';
+        span.style.animationDelay = Math.random() * 5 + 's';
+        snowLayer.appendChild(span);
+      }
+    }
+  </script>
+</body>
+</html>

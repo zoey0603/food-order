@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>溫馨小食堂 點餐系統 - Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<div id="image-modal" class="image-modal hidden">
+  <div class="image-modal-content">
+    <button id="image-modal-close" class="image-modal-close">×</button>
+    <img id="image-modal-pic" src="" alt="餐點圖片放大" />
+    <h3 id="image-modal-title"></h3>
+  </div>
+</div>
+
+<body class="has-snow">
+  <main class="layout">
+    <section id="menu" class="menu-section slide-in">
+      <h2>今日菜單</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-category="all">全部</button>
+        <button class="tab-btn" data-category="breakfast">早餐</button>
+        <button class="tab-btn" data-category="lunch">午餐</button>
+        <button class="tab-btn" data-category="drink">飲料</button>
+        <button class="tab-btn" data-category="dessert">甜點</button>
+      </div>
+
+      <div class="menu-grid" id="menu-list">
+        <div class="menu-item" data-category="breakfast" data-price="60">
+          <img src="images/toast.jpg" alt="起司厚片" />
+          <h3>起司厚片</h3>
+          <p class="desc">酥脆吐司搭配香濃起司。</p>
+          <p class="price">NT$ 60</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="breakfast" data-price="55">
+          <img src="images/egg_sandwich.jpg" alt="火腿蛋吐司" />
+          <h3>火腿蛋吐司</h3>
+          <p class="desc">經典早餐組合，一口滿足。</p>
+          <p class="price">NT$ 55</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="breakfast" data-price="45">
+          <img src="images/soy_milk.jpg" alt="熱豆漿" />
+          <h3>熱豆漿</h3>
+          <p class="desc">暖胃順口的手工現煮豆漿。</p>
+          <p class="price">NT$ 45</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+
+        <div class="menu-item" data-category="lunch" data-price="120">
+          <img src="images/bento.jpg" alt="家常便當" />
+          <h3>家常便當</h3>
+          <p class="desc">三菜一肉，營養均衡。</p>
+          <p class="price">NT$ 120</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="lunch" data-price="130">
+          <img src="images/udon.jpg" alt="鍋燒烏龍麵" />
+          <h3>鍋燒烏龍麵</h3>
+          <p class="desc">熱騰騰的湯頭配上Q彈烏龍麵。</p>
+          <p class="price">NT$ 130</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="lunch" data-price="110">
+          <img src="images/curry_rice.jpg" alt="咖哩飯" />
+          <h3>咖哩飯</h3>
+          <p class="desc">濃郁日式咖哩配上白飯。</p>
+          <p class="price">NT$ 110</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+
+        <div class="menu-item" data-category="drink" data-price="45">
+          <img src="images/milktea.jpg" alt="珍珠奶茶" />
+          <h3>珍珠奶茶</h3>
+          <p class="desc">QQ 珍珠配上濃醇奶香。</p>
+          <p class="price">NT$ 45</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="drink" data-price="35">
+          <img src="images/black_tea.jpg" alt="古早味紅茶" />
+          <h3>古早味紅茶</h3>
+          <p class="desc">不會太甜的古早味好茶。</p>
+          <p class="price">NT$ 35</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="drink" data-price="40">
+          <img src="images/green_tea.jpg" alt="茉莉綠茶" />
+          <h3>茉莉綠茶</h3>
+          <p class="desc">清爽解膩的淡雅茶香。</p>
+          <p class="price">NT$ 40</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+
+        <div class="menu-item" data-category="dessert" data-price="60">
+          <img src="images/cheesecake.jpg" alt="起司蛋糕" />
+          <h3>起司蛋糕</h3>
+          <p class="desc">綿密濃郁，入口即化。</p>
+          <p class="price">NT$ 60</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="dessert" data-price="50">
+          <img src="images/brownie.jpg" alt="布朗尼" />
+          <h3>巧克力布朗尼</h3>
+          <p class="desc">濃厚巧克力，甜而不膩。</p>
+          <p class="price">NT$ 50</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+        <div class="menu-item" data-category="dessert" data-price="45">
+          <img src="images/pudding.jpg" alt="布丁" />
+          <h3>焦糖布丁</h3>
+          <p class="desc">滑嫩布丁搭配香甜焦糖。</p>
+          <p class="price">NT$ 45</p>
+          <button class="add-btn">加入購物車</button>
+        </div>
+      </div>
+    </section>
+
+    <aside id="cart" class="cart-section slide-in">
+      <h2>購物車</h2>
+      <ul id="cart-items" class="cart-items"></ul>
+
+      <div class="discount-area">
+        <p>滿額優惠：滿 300 元自動折 30 元。</p>
+        <p id="game-discount-text">小遊戲折扣：目前 0 元</p>
+      </div>
+
+      <div class="cart-summary">
+        <div>
+          <p>小計：<span id="subtotal-price">0</span> 元</p>
+          <p>折扣後：<span id="total-price">0</span> 元</p>
+        </div>
+        <button id="checkout-btn" class="glow-btn">結帳</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>感謝您的訂購！</h3>
+      <p>您的餐點正在準備中 🍱</p>
+      <button id="back-home" class="glow-btn">回到頂部</button>
+    </div>
+  </div>
+
+  <div class="snow-layer"></div>
+  <div class="light-orb"></div>
+
+  <div class="mobile-cart-bar hidden" id="mobile-cart-bar">
+    <span id="mobile-cart-text">0 項商品 | NT$ 0</span>
+    <button id="mobile-cart-btn">查看購物車</button>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>
