@@ -52,7 +52,8 @@ tabButtons.forEach(btn => {
     const category = btn.dataset.category;
 
     menuItems.forEach(item => {
-      if (category === 'all' || item.dataset.category === category) {
+      const itemCategory = item.dataset.category || '';
+      if (category === 'all' || itemCategory.includes(category)) {
         item.style.display = '';
       } else {
         item.style.display = 'none';
